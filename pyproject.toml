@@ -1,0 +1,25 @@
+[project]
+name = "executive-coach-agent"
+version = "0.1.0"
+description = "An AI-powered executive coach agent built on Google ADK"
+requires-python = ">=3.11"
+dependencies = [
+    "google-adk>=1.0.0",
+    "slack-bolt>=1.18.0",
+    "slack-sdk>=3.27.0",
+    "apscheduler>=3.10.0,<4.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["executive_coach*"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
