@@ -11,7 +11,7 @@ An AI-powered executive coach agent built on the **Google Agent Development Kit 
 | Dimension | Decision |
 |---|---|
 | **Framework** | Google ADK (Python) |
-| **LLM** | Gemini 2.5 Flash (native to ADK) |
+| **LLM** | Gemini 3 Flash (native to ADK) |
 | **Communication** | Slack — DMs for coaching, dedicated `#coach-log` channel for summaries |
 | **Context source** | Markdown files (goals, OKRs, career plans) |
 | **Productivity tool** | Obsidian — full vault access (daily notes, tasks, projects, meeting notes, goals) |
@@ -257,7 +257,7 @@ executive-coach-agent/
 | Component | Technology |
 |---|---|
 | Agent framework | `google-adk` (latest) |
-| LLM | Gemini 2.5 Flash via ADK |
+| LLM | Gemini 3 Flash via ADK |
 | Slack integration | `slack-bolt` + `slack-sdk` |
 | Scheduling | `APScheduler` (local cron-like scheduler) |
 | Obsidian access | Direct filesystem I/O (pathlib) + full-text search |
