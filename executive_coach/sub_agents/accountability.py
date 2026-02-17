@@ -14,7 +14,7 @@ from executive_coach.tools.utils import get_current_datetime
 
 accountability_agent = LlmAgent(
     name="AccountabilityAgent",
-    model="gemini-3-flash",
+    model="gemini-3-flash-preview",
     description=(
         "Handles goal tracking, OKR check-ins, daily morning/evening check-ins, "
         "and weekly reviews. Delegate here for anything related to goals, "

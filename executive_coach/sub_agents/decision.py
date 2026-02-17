@@ -13,7 +13,7 @@ from executive_coach.tools.utils import get_current_datetime, log_decision, get_
 
 decision_agent = LlmAgent(
     name="DecisionAgent",
-    model="gemini-3-flash",
+    model="gemini-3-flash-preview",
     description=(
         "Handles strategic decision support using Socratic questioning, "
         "structured frameworks (SWOT, decision matrix, pre-mortem), and "

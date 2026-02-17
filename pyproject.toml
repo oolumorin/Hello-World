@@ -5,7 +5,7 @@ description = "An AI-powered executive coach agent built on Google ADK"
 requires-python = ">=3.11"
 dependencies = [
     "google-adk>=1.0.0",
-    "slack-bolt>=1.18.0",
+    "slack-bolt[async]>=1.18.0",
     "slack-sdk>=3.27.0",
     "apscheduler>=3.10.0,<4.0.0",
     "python-dotenv>=1.0.0",

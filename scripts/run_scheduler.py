@@ -14,7 +14,7 @@ load_dotenv(project_root / ".env")
 from executive_coach.scheduler import CoachScheduler
 
 
-def main() -> None:
+async def main() -> None:
     scheduler = CoachScheduler()
     scheduler.start()
 
@@ -24,24 +24,14 @@ def main() -> None:
         print(f"  - {job.id}: {job.trigger}")
     print("\nPress Ctrl+C to stop.\n")
 
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-
     stop_event = asyncio.Event()
 
-    def _shutdown(sig, frame):
-        print("\nShutting down scheduler...")
-        scheduler.stop()
-        stop_event.set()
+    loop = asyncio.get_running_loop()
+    for sig in (signal.SIGINT, signal.SIGTERM):
+        loop.add_signal_handler(sig, lambda: (scheduler.stop(), stop_event.set()))
 
-    signal.signal(signal.SIGINT, _shutdown)
-    signal.signal(signal.SIGTERM, _shutdown)
-
-    try:
-        loop.run_until_complete(stop_event.wait())
-    finally:
-        loop.close()
+    await stop_event.wait()
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

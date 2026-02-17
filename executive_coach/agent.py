@@ -21,7 +21,7 @@ from executive_coach.tools.utils import get_current_datetime
 
 root_agent = LlmAgent(
     name="ExecutiveCoach",
-    model="gemini-3-flash",
+    model="gemini-3-flash-preview",
     description="Executive coach coordinator that routes to specialist sub-agents.",
     instruction=COORDINATOR_PROMPT,
     tools=[

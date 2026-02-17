@@ -14,7 +14,7 @@ from executive_coach.tools.utils import get_current_datetime
 
 career_coach_agent = LlmAgent(
     name="CareerCoachAgent",
-    model="gemini-3-flash",
+    model="gemini-3-flash-preview",
     description=(
         "Handles career growth coaching including career planning, skill gap "
         "analysis, promotion readiness tracking, networking strategy, and "
